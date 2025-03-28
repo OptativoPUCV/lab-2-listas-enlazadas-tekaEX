@@ -54,7 +54,7 @@ void * nextList(List * lista) {
 actualiza el current al nodo correspondiente.*/
 void * lastList(List * lista) {
     lista -> current = lista -> tail; 
-    return (lista -> tail -> data);
+    return (lista -> current -> data);
 }
 
 /*La segunda función retorna el dato del nodo anterior a current y 
