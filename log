@@ -1,0 +1,11 @@
+Fri, Mar 28, 2025 11:36:00 AM: 
+ list.c | 37 ++++++++++++++++++++++++++-----------
+ 1 file changed, 26 insertions(+), 11 deletions(-)
+In file included from test.c:5:0:
+list.c: In function 'createList':
+list.c:34:19: error: statement with no effect [-Werror=unused-value]
+     lista -> tail == NULL;
+                   ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+25021aa

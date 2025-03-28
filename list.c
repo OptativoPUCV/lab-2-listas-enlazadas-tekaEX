@@ -29,23 +29,38 @@ Node * createNode(void * data) {
 }
 
 List * createList() {
-     return NULL;
+    List* lista = (List*)malloc(sizeof(lista));
+    lista -> head = NULL;
+    lista -> tail == NULL;
+    lista -> current = NULL;
+    return lista;
+}
+/*La primera retorna el dato del primer nodo de la lista (head) y 
+actualiza el current para que apunte a ese nodo.*/
+void * firstList(List * lista) {
+    if (!lista -> head) return NULL;
+    lista-> current = lista-> head;
+    return (lista->head->data);
 }
 
-void * firstList(List * list) {
-    return NULL;
+/*La segunda función retorna el dato del nodo a continuación del current y 
+actualiza el current para que apunte a ese nodo.*/
+void * nextList(List * lista) {
+    lista -> current -> data = lista -> current -> next;
+    return (lista->current->next);
+}
+/*La primera retorna el dato del último elemento en la lista y 
+actualiza el current al nodo correspondiente.*/
+void * lastList(List * lista) {
+    lista -> current = lista -> tail; 
+    return (lista -> tail -> data);
 }
 
-void * nextList(List * list) {
-    return NULL;
-}
-
-void * lastList(List * list) {
-    return NULL;
-}
-
-void * prevList(List * list) {
-    return NULL;
+/*La segunda función retorna el dato del nodo anterior a current y 
+actualiza el current para que apunte a ese nodo.*/
+void * prevList(List * lista) {
+    lista->current->data = lista->current->prev;
+    return (lista->current->prev);
 }
 
 void pushFront(List * list, void * data) {
