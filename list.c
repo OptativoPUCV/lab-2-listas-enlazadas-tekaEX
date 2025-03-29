@@ -129,9 +129,11 @@ void * popCurrent(List * list) {
     if (list->current->next == NULL) list->tail = list->current->prev;
     else list->current->next->prev = list->current->prev;
 
+    void *data = list->current->data;
+    Node *temp = list->current;
     list->current = list->current->next;
-    free(list->current);
-    return(list->current->data);
+    free(temp);
+    return data;
 }
 
 void cleanList(List * list) {
