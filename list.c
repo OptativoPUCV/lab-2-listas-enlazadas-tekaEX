@@ -70,9 +70,9 @@ Puede utilizar la función Node* createNode(void * data) la cual crea, incializa
 void pushFront(List * list, void * data) {
     Node* aux = createNode(data);
     list -> head -> next = aux -> prev;
-    aux -> next = list -> head ->prev;
+    aux -> next = list -> head -> prev;
 
-    return (list ->head ->data);
+    return (aux);
 }
 
 void pushBack(List * list, void * data) {
