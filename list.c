@@ -123,10 +123,10 @@ está en la posición del current de la lista enlazada, y además retorna el dat
 void * popCurrent(List * list) {
     if (list->current == NULL || list == NULL) return NULL;
     
-    if (list->current->next == NULL) list->head = list->current->next;
+    if (list->current->prev == NULL) list->head = list->current->next;
     else list->current->prev->next = list->current->next;
 
-    if (list->current->prev == NULL) list->tail = list->current->prev;
+    if (list->current->next == NULL) list->tail = list->current->prev;
     else list->current->next->prev = list->current->prev;
 
     list->current = list->current->next;
